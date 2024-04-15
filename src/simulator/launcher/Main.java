@@ -43,14 +43,14 @@ public class Main {
 	private static final Double DEFAULT_DELTA_TIME = 0.03; // seconds
 
 	private static Double time = null;
-	private static Double deltaTime = null;
+	public static Double deltaTime = null;
 	private static String inFile = null;
 	private static String outFile = null;
 	private static boolean sv = false;
 
 	// factories
-	private static Factory<Animal> animalFactory;
-	private static Factory<Region> regionFactory;
+	public static Factory<Animal> animalFactory;
+	public static Factory<Region> regionFactory;
 
 	public static void main(String[] args) {
 		Utils.randomGenerator.setSeed(2147483647L);

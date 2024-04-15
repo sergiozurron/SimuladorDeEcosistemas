@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Simulator implements JSONable, Observable<EcoSysObserver> {
+	
     private final Factory<Animal> animalsFactory;
     private final Factory<Region> regionsFactory;
     private RegionManager regionManager;
@@ -31,7 +32,7 @@ public class Simulator implements JSONable, Observable<EcoSysObserver> {
     }
 
     public void setRegion(int row, int col, JSONObject rJson) {
-        Region r = regionsFactory.createInstance(rJson);
+    Region r = regionsFactory.createInstance(rJson);
     	setRegion(row, col, r);
         Iterator<EcoSysObserver> it = observers.iterator();
         while(it.hasNext())
@@ -89,7 +90,7 @@ public class Simulator implements JSONable, Observable<EcoSysObserver> {
         return new JSONObject().put("time", simulationTime).put("state", regionManager.asJSON());
     }
     
-    public void reset(int cols, int rows, int width, int height) {
+public void reset(int cols, int rows, int width, int height) {
     	animals = new ArrayList<Animal>();
     	regionManager = new RegionManager(cols, rows, width, height);
     	simulationTime = 0.0;
